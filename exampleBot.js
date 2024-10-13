@@ -7,7 +7,7 @@ const delayStartBlocker = require('./blockers').delayStartBlocker
 
 
 app.use('/static', express.static('public'))
-
+app.use('/assets', express.static('fe/dist/assets'))
 newG({
     baseState: {
         //Starting State
@@ -53,7 +53,7 @@ newG({
 
 
 app.get('/', function (req, res) {
-    return res.status(200).sendFile(__dirname + '/exampleBot.html');
+    return res.status(200).sendFile(__dirname + '/fe/dist/index.html');
 });
 
 
